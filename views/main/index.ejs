@@ -4,10 +4,25 @@
     <%- include ('../partials/head.ejs') %>
   </head>
   <body>
-    <nav>
-      <%- include ('../partials/nav.ejs') %>
-    </nav>
-    <h1>Home Page (Index)</h1>
-    <p>Display Scrapbooks</p>
+    <div class="container">
+      <nav>
+        <%- include ('../partials/nav.ejs') %>
+      </nav>
+      <h1 class="text-center">Scrapbooks Index</h1>
+      <!-- CARDS -->
+      <div class="card-container text-center">
+        <div class="row">
+          <div class="card col-sm" style="width: 18rem;">
+            <img src="" alt="" />
+            <h5 class="card-title">Scrapbook 1</h5>
+            <p class="card-body">
+              Display created scrapbooks as cards. Have the ability to create,
+              read, edit, and delete scrapbooks.
+            </p>
+            <a href="" class="btn btn-outline-primary">Open Scrapbook</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
