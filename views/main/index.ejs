@@ -15,16 +15,18 @@
       <!-- CARDS -->
       <div class="card-container text-center">
         <div class="row">
-          <div class="card col-sm" style="width: 18rem;">
-            <img src="" alt="" />
-            <h5 class="card-title">Scrapbook 1</h5>
+          <% scrapbooks.forEach(element => { %>
+
+          <div class="card col-sm-4" style="width: 18rem;">
+            <img src="<%= element.img %> " alt="" class="img-fluid" />
+            <h5 class="card-title"><%= element.name %></h5>
             <p class="card-body">
-              Display created scrapbooks as cards. Have the ability to create,
-              read, edit, and delete scrapbooks.
+              <%= element.description %>
             </p>
             <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
             <a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
           </div>
+          <% }) %>
         </div>
       </div>
       <footer>

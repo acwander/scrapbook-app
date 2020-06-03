@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express.Router();
+const Scrapbook = require("../models/scrapbook.js");
 
 //Landing Page
 app.get("/", (req, res) => {
@@ -8,10 +9,17 @@ app.get("/", (req, res) => {
 
 //Home
 app.get("/home", (req, res) => {
-  res.render("../views/main/index.ejs");
+  Scrapbook.find({}, (err, allBooks) => {
+    if (err) {
+      res.send("Error:" + err);
+    }
+    res.render("../views/main/index.ejs", {
+      scrapbooks: allBooks,
+    });
+  });
 });
 
-//Create
+//New
 app.get("/new", (req, res) => {
   res.render("../views/main/new.ejs");
 });
@@ -19,6 +27,16 @@ app.get("/new", (req, res) => {
 //Show
 app.get("/:id", (req, res) => {
   res.send("Show Scrapbook");
+});
+
+//Create
+app.post("/", (req, res) => {
+  Scrapbook.create(req.body, (err, createdBook) => {
+    if (err) {
+      res.send("Error:" + err);
+    }
+    res.redirect("/scrapbook/home");
+  });
 });
 
 module.exports = app;
