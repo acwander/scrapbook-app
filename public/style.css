@@ -4,3 +4,14 @@ h1 {
   font-family: "Parisienne", cursive;
   font-size: 5rem;
 }
+
+a,
+a:hover,
+a:visited {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.new-scrapbook:hover {
+  color: red;
+}
