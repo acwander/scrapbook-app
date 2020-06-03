@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include ('../partials/head.ejs') %>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <%- include ('../partials/nav.ejs') %>
+      </nav>
+      <header class="text-center">
+        <h1 class="text-center"><%=scrapbook.name%></h1>
+        <img
+          src="<%= scrapbook.img %> "
+          alt=""
+          class="img-fluid img-thumbnail"
+        />
+        <p><%= scrapbook.description %></p>
+      </header>
+      <div class="text-center">
+        <a href="/scrapbook/home" class="btn btn-outline-primary">Home</a>
+      </div>
+      <footer>
+        <%- include ('../partials/footer.ejs') %>
+      </footer>
+    </div>
+  </body>
+</html>

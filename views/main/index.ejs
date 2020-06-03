@@ -24,7 +24,11 @@
               <%= element.description %>
             </p>
             <!-- Show -->
-            <a href="#" class="btn btn-sm btn-outline-primary">Open</a>
+            <a
+              href="/scrapbook/<%=element.id%> "
+              class="btn btn-sm btn-outline-primary"
+              >Open</a
+            >
             <!-- Delete -->
             <form
               action="/scrapbook/<%=element.id%>?_method=DELETE"

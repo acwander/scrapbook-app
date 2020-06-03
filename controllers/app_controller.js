@@ -26,7 +26,14 @@ app.get("/new", (req, res) => {
 
 //Show
 app.get("/:id", (req, res) => {
-  res.send("Show Scrapbook");
+  Scrapbook.findById(req.params.id, (err, foundBook) => {
+    if (err) {
+      res.send("Error:" + err);
+    }
+    res.render("../views/main/show.ejs", {
+      scrapbook: foundBook,
+    });
+  });
 });
 
 //Create
