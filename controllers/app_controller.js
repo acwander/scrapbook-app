@@ -39,4 +39,14 @@ app.post("/", (req, res) => {
   });
 });
 
+//Delete
+app.delete("/:id", (req, res) => {
+  Scrapbook.findByIdAndDelete(req.params.id, (err, deletedBook) => {
+    if (err) {
+      res.send("Error:" + err);
+    }
+    res.redirect("/scrapbook/home");
+  });
+});
+
 module.exports = app;
