@@ -2,12 +2,12 @@ const express = require("express");
 const app = express.Router();
 const Scrapbook = require("../models/scrapbook.js");
 
-//Landing Page
+// Landing Page
 app.get("/", (req, res) => {
   res.render("../views/main/landing.ejs");
 });
 
-//Home
+// Home
 app.get("/home", (req, res) => {
   Scrapbook.find({}, (err, allBooks) => {
     if (err) {
@@ -19,12 +19,21 @@ app.get("/home", (req, res) => {
   });
 });
 
-//New
+// New
 app.get("/new", (req, res) => {
   res.render("../views/main/new.ejs");
 });
 
-//Show
+// Edit
+app.get("/:id/edit", (req, res) => {
+  Scrapbook.findById(req.params.id, (err, foundBook) => {
+    res.render("../views/main/edit.ejs", {
+      scrapbook: foundBook,
+    });
+  });
+});
+
+// Show
 app.get("/:id", (req, res) => {
   Scrapbook.findById(req.params.id, (err, foundBook) => {
     if (err) {
@@ -36,7 +45,7 @@ app.get("/:id", (req, res) => {
   });
 });
 
-//Create
+// Create
 app.post("/", (req, res) => {
   Scrapbook.create(req.body, (err, createdBook) => {
     if (err) {
@@ -46,7 +55,22 @@ app.post("/", (req, res) => {
   });
 });
 
-//Delete
+// Edit
+app.put("/:id", (req, res) => {
+  Scrapbook.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedBook) => {
+      if (err) {
+        res.send("Error:" + err);
+      }
+      res.redirect("/scrapbook/home");
+    }
+  );
+});
+
+// Delete
 app.delete("/:id", (req, res) => {
   Scrapbook.findByIdAndDelete(req.params.id, (err, deletedBook) => {
     if (err) {
