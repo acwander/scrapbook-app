@@ -65,7 +65,7 @@ app.put("/:id", (req, res) => {
       if (err) {
         res.send("Error:" + err);
       }
-      res.redirect("/scrapbook/home");
+      res.redirect("/scrapbook/" + req.params.id);
     }
   );
 });
