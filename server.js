@@ -21,6 +21,7 @@ mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
+  useCreateIndex: true,
 });
 
 // Error / success
