@@ -15,3 +15,8 @@ a:visited {
 .new-scrapbook:hover {
   color: red;
 }
+
+textarea {
+  width: 300px;
+  height: 150px;
+}
