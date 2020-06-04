@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-var entrySchema = new mongoose.Schema(
+const entrySchema = new mongoose.Schema(
   {
     title: {
       type: String,
@@ -10,10 +10,8 @@ var entrySchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    img: {
+    image: {
       type: String,
-      default:
-        "https://images.unsplash.com/photo-1543095834-7445b8af8c2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1302&q=80",
     },
   },
   {

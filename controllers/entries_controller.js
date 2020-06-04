@@ -33,7 +33,7 @@ entries.post("/", (req, res) => {
     Entry.create(req.body, (err, createdEntry) => {
       foundBook.entries.push(createdEntry);
       foundBook.save((err, data) => {
-        res.redirect("scrapbook/" + req.body.bookId);
+        res.redirect("/scrapbook/" + req.body.bookId);
       });
     });
   });
