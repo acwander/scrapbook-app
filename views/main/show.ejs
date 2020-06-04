@@ -10,14 +10,15 @@
       </nav>
       <header class="text-center">
         <h1><%=scrapbook.name%></h1>
-        <a href="/entry" class="btn btn-outline-primary">New Page</a>
+        <a href="/entries/new" class="btn btn-outline-primary">New Page</a>
       </header>
 
       <!-- Carousel -->
       <div
         id="carouselExampleCaptions"
-        class="carousel slide"
+        class="carousel slide carousel-fade"
         data-ride="carousel"
+        data-interval="false"
       >
         <ol class="carousel-indicators">
           <li
@@ -38,6 +39,19 @@
             <div class="carousel-caption d-none d-md-block">
               <h5><%=scrapbook.name%></h5>
               <p><%= scrapbook.description %></p>
+            </div>
+          </div>
+          <!-- TODO: Loop to add entries to carousel -->
+          <div class="carousel-item">
+            <!-- placeholder image -->
+            <img
+              src="https://images.unsplash.com/photo-1543095834-7445b8af8c2b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1302&q=80"
+              class="d-block w-100"
+              alt=""
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </div>
           </div>
         </div>

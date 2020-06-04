@@ -43,8 +43,8 @@ app.use(methodOverride("_method")); // allow POST, PUT and DELETE from a form
 const appController = require("./controllers/app_controller.js");
 app.use("/scrapbook", appController);
 
-const entryController = require("./controllers/entry_controller");
-app.use("/entry", entryController);
+const entriesController = require("./controllers/entries_controller");
+app.use("/entries", entriesController);
 
 // Routes
 //localhost:3000
