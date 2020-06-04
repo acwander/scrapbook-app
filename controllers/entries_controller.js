@@ -27,13 +27,13 @@ entries.get("/:id", (req, res) => {
   });
 });
 
-// // Create
+// Create
 entries.post("/", (req, res) => {
   Scrapbook.findById(req.body.bookId, (err, foundBook) => {
     Entry.create(req.body, (err, createdEntry) => {
       foundBook.entries.push(createdEntry);
       foundBook.save((err, data) => {
-        res.redirect("/scrapbook/" + req.body.bookId);
+        res.redirect("scrapbook/" + req.body.bookId);
       });
     });
   });

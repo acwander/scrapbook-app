@@ -5,7 +5,6 @@ var entrySchema = new mongoose.Schema(
     title: {
       type: String,
       required: true,
-      unique: true,
     },
     memory: {
       type: String,
