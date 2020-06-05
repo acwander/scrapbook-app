@@ -11,19 +11,17 @@
       <form action="/entries/<%= entry.id %>?_method=PUT " method="POST">
         <div class="form-group">
           <label for="title">Page Title:</label>
-          <input type="text" name="title" required />
+          <input type="text" name="title" value="<%= entry.title %>" required />
         </div>
         <div class="form-group">
           <label for="memory">Memory:</label>
-          <textarea type="textarea" name="memory" required></textarea>
+          <textarea type="textarea" name="memory" required>
+            <%= entry.memory %>
+          </textarea>
         </div>
         <div class="form-group">
           <label for="image">Picture:</label>
-          <input
-            type="text"
-            name="image"
-            value="https://source.unsplash.com/random"
-          />
+          <input type="text" name="image" value="<%=entry.image %>" />
         </div>
         <input type="submit" value="Submit" class="btn btn-outline-primary" />
       </form>
