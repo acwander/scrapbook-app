@@ -26,3 +26,9 @@ textarea {
   height: 40rem;
   max-height: 40rem;
 }
+
+.card img {
+  width: auto;
+  height: 18rem;
+  max-height: 18rem;
+}

@@ -6,9 +6,10 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="/scrapbook/<%= scrapbook.id %>"><%= scrapbook.name %></a>
     <h1><%= entry.title %></h1>
     <p><%= entry.memory %></p>
-    <img src="<%= entry.img %> " alt="<%= entry.title %> " />
+    <img src="<%= entry.image %> " alt="<%= entry.title %> " />
     <!-- Delete -->
     <form action="/entries/<%=entry.id%>?_method=DELETE" method="POST">
       <input

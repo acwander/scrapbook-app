@@ -18,7 +18,7 @@ entries.get("/new", (req, res) => {
 // Show
 entries.get("/:id", (req, res) => {
   Entry.findById(req.params.id, (err, foundEntry) => {
-    Scrapbook.findOne({ "entries.id": req.params.id }, (err, foundBook) => {
+    Scrapbook.findOne({ "entries._id": req.params.id }, (err, foundBook) => {
       res.render("../views/entries/show.ejs", {
         scrapbook: foundBook,
         entry: foundEntry,
@@ -37,6 +37,24 @@ entries.post("/", (req, res) => {
       });
     });
   });
+});
+
+// Edit
+entries.put("/:id", (req, res) => {
+  Entry.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, updatedEntry) => {
+      Scrapbook.findOne({ "entries.id": req.params.id }, (err, foundBook) => {
+        foundBook.entries.id(req.params.id).remove();
+        foundBook.entries.push(updatedEntry);
+        foundBook.save((err, data) => {
+          res.send(foundBook);
+        });
+      });
+    }
+  );
 });
 
 module.exports = entries;

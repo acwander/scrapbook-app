@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express.Router();
+const Entry = require("../models/entry.js");
 const Scrapbook = require("../models/scrapbook.js");
 
 // Landing Page
