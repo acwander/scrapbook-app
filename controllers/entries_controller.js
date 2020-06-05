@@ -15,15 +15,6 @@ entries.get("/new", (req, res) => {
   });
 });
 
-// // New
-// entries.get("/:id/new", (req, res) => {
-//   Scrapbook.findById(req.params.id, (err, foundBook) => {
-//     res.render("../views/entries/new.ejs", {
-//       scrapbook: foundBook,
-//     });
-//   });
-// });
-
 // Edit
 entries.get("/:id/edit", (req, res) => {
   Entry.findById(req.params.id, (err, foundEntry) => {
