@@ -9,7 +9,7 @@
       <%- include ('../partials/nav.ejs') %>
       <header class="text-center">
         <h1><%=scrapbook.name%></h1>
-        <a href="/entries/new" class="btn btn-outline-primary">New Page</a>
+        <p><%= scrapbook.description %></p>
       </header>
 
       <!-- Carousel -->
@@ -72,6 +72,10 @@
       <!-- Carousel End -->
       <div class="container">
         <div class="row">
+          <!-- Create -->
+          <a href="/entries/new" class="btn btn-sm btn-outline-primary col-sm"
+            >Create New Page</a
+          >
           <!-- Edit -->
           <a
             href="/scrapbook/<%=scrapbook.id%>/edit"
