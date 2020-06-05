@@ -77,7 +77,21 @@ app.delete("/:id", (req, res) => {
     if (err) {
       res.send("Error:" + err);
     }
-    res.redirect("/scrapbook/home");
+    // Delete entries associated with deleted book from db
+    const entriesIds = [];
+    for (let i = 0; i < deletedBook.entries.length; i++) {
+      entriesIds.push(deletedBook.entries[i]._id);
+    }
+    Entry.remove(
+      {
+        _id: {
+          $in: entriesIds,
+        },
+      },
+      (err, data) => {
+        res.redirect("/scrapbook/home");
+      }
+    );
   });
 });
 
