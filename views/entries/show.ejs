@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <%- include('../partials/head.ejs') %>
   </head>
   <body>
-    <a href="/scrapbook/<%= scrapbook.id %>"><%= scrapbook.name %></a>
-    <h1><%= entry.title %></h1>
-    <p><%= entry.memory %></p>
-    <img src="<%= entry.image %> " alt="<%= entry.title %> " />
-    <!-- Edit -->
-    <a href="/entries/<%=entry.id%>/edit" class="btn btn-sm btn-outline-primary"
-      >Edit</a
-    >
-    <!-- Delete -->
-    <form action="/entries/<%=entry.id%>?_method=DELETE" method="POST">
-      <input
-        type="submit"
-        value="Delete"
-        class="btn btn-sm btn-outline-danger"
-      />
-    </form>
+    <div class="container">
+      <nav>
+        <%- include ('../partials/nav.ejs') %>
+      </nav>
+
+      <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1><%= entry.title %></h1>
+          <p><%= entry.memory %></p>
+          <img src="<%= entry.image %> " alt="<%= entry.title %> " />
+          <hr />
+
+          <div class="container">
+            <div class="row">
+              <!-- Edit -->
+              <a
+                href="/scrapbook/<%= scrapbook.id %>"
+                class="btn btn-sm btn-outline-primary col"
+                >Return to <%= scrapbook.name %> Without Making Changes</a
+              >
+              <a
+                href="/entries/<%=entry.id%>/edit"
+                class="btn btn-sm btn-outline-primary col"
+                >Edit Page (Title, Memory, Image)</a
+              >
+              <!-- Delete -->
+              <form
+                action="/entries/<%=entry.id%>?_method=DELETE"
+                method="POST"
+              >
+                <input
+                  type="submit"
+                  value="Delete Page"
+                  class="btn btn-sm btn-outline-danger col"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

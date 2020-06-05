@@ -32,3 +32,9 @@ textarea {
   height: 18rem;
   max-height: 18rem;
 }
+
+.jumbotron img {
+  width: auto;
+  height: 30rem;
+  max-height: 30rem;
+}
