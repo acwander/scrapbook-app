@@ -56,7 +56,7 @@ app.post("/", (req, res) => {
   });
 });
 
-// Edit
+// Update
 app.put("/:id", (req, res) => {
   Scrapbook.findByIdAndUpdate(
     req.params.id,

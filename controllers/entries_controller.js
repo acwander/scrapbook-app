@@ -15,6 +15,15 @@ entries.get("/new", (req, res) => {
   });
 });
 
+// Edit
+entries.get("/:id/edit", (req, res) => {
+  Entry.findById(req.params.id, (err, foundEntry) => {
+    res.render("../views/entries/edit.ejs", {
+      entry: foundEntry,
+    });
+  });
+});
+
 // Show
 entries.get("/:id", (req, res) => {
   Entry.findById(req.params.id, (err, foundEntry) => {
@@ -39,7 +48,7 @@ entries.post("/", (req, res) => {
   });
 });
 
-// Edit
+// Update
 entries.put("/:id", (req, res) => {
   Entry.findByIdAndUpdate(
     req.params.id,

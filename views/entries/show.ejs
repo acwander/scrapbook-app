@@ -10,6 +10,10 @@
     <h1><%= entry.title %></h1>
     <p><%= entry.memory %></p>
     <img src="<%= entry.image %> " alt="<%= entry.title %> " />
+    <!-- Edit -->
+    <a href="/entries/<%=entry.id%>/edit" class="btn btn-sm btn-outline-primary"
+      >Edit</a
+    >
     <!-- Delete -->
     <form action="/entries/<%=entry.id%>?_method=DELETE" method="POST">
       <input
