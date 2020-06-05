@@ -20,21 +20,12 @@
         data-ride="carousel"
         data-interval="false"
       >
-        <ol class="carousel-indicators">
-          <li
-            data-target="#carouselExampleCaptions"
-            data-slide-to="0"
-            class="active"
-          ></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-          <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-        </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
               src="<%= scrapbook.image %>"
               class="d-block w-100 img-fluid"
-              alt="..."
+              alt="<%= scrapbook.name %>"
             />
             <div class="carousel-caption d-none d-md-block">
               <h5><%=scrapbook.name%></h5>
@@ -47,11 +38,14 @@
             <img
               src="<%= scrapbook.entries[i].image %> "
               class="d-block w-100"
-              alt=""
+              alt="<%= scrapbook.entries[i].title %>"
             />
             <div class="carousel-caption d-none d-md-block">
               <h5><%= scrapbook.entries[i].title %></h5>
               <p><%= scrapbook.entries[i].memory %></p>
+              <p>
+                <a href="/entries/<%= scrapbook.entries[i].id %>">Show More</a>
+              </p>
             </div>
           </div>
           <% } %>
