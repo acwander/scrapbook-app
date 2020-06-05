@@ -10,6 +10,7 @@
       <h1 class="text-center">Create a Page</h1>
       <form action="/entries" method="POST">
         <!-- Select which book to edit -->
+        <label>Select Scrapbook:</label>
         <select name="bookId">
           <% for( let i = 0; i < scrapbooks.length; i++ ) { %>
           <option value="<%= scrapbooks[i].id %>">
