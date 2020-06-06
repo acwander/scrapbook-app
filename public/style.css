@@ -47,10 +47,6 @@ textarea {
   width: 18rem;
 }
 
-.new-scrapbook:hover {
-  color: red;
-}
-
 .new-title {
   font-family: "Parisienne", cursive;
 }
@@ -60,6 +56,11 @@ textarea {
   font-size: 3rem;
   color: gold;
   margin: 3rem auto;
+}
+
+.new-scrapbook:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* ENTRY SHOW PAGE */
