@@ -30,6 +30,10 @@ textarea {
 
 /* INDEX PAGE */
 
+header h1 {
+  padding: 0.3em;
+}
+
 .card {
   min-width: 18rem;
   min-height: 30rem;

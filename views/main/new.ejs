@@ -7,10 +7,12 @@
     <div class="container">
       <!-- Navbar -->
       <%- include ('../partials/nav.ejs') %>
-      <h1 class="text-center">Create a Scrapbook</h1>
+      <header>
+        <h1 class="text-center">Create a Scrapbook</h1>
+      </header>
       <form action="/scrapbook" method="POST">
         <div class="form-group">
-          <label for="name">Scrapbook:</label>
+          <label for="name">Scrapbook Name:</label>
           <input type="text" name="name" required />
         </div>
         <div class="form-group">

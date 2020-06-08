@@ -7,7 +7,9 @@
     <div class="container">
       <!-- Navbar -->
       <%- include ('../partials/nav.ejs') %>
-      <h1 class="text-center">Edit <%= entry.title %></h1>
+      <header>
+        <h1 class="text-center">Edit <%= entry.title %></h1>
+      </header>
       <form action="/entries/<%= entry.id %>?_method=PUT " method="POST">
         <div class="form-group">
           <label for="title">Page Title:</label>

@@ -7,7 +7,9 @@
     <div class="container">
       <!-- Navbar -->
       <%- include ('../partials/nav.ejs') %>
-      <h1 class="text-center">Edit <%= scrapbook.name %></h1>
+      <header>
+        <h1 class="text-center">Edit <%= scrapbook.name %></h1>
+      </header>
       <form action="/scrapbook/<%= scrapbook.id %>?_method=PUT" method="POST">
         <div class="form-group">
           <label for="name">Scrapbook Title:</label>
