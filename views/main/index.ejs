@@ -16,21 +16,17 @@
           <% scrapbooks.forEach(element => { %>
 
           <div class="card col-sm-3 mx-auto">
-            <img
-              src="<%= element.image %> "
-              alt="<%= element.name %>"
-              class="img-fluid"
-            />
-            <h5 class="card-title"><%= element.name %></h5>
-            <p class="card-body">
-              <%= element.description %>
-            </p>
-            <!-- Show -->
-            <a
-              href="/scrapbook/<%=element.id%> "
-              class="btn btn-sm btn-outline-primary open-btn"
-              >Open</a
-            >
+            <a href="/scrapbook/<%=element.id%>">
+              <img
+                src="<%= element.image %> "
+                alt="<%= element.name %>"
+                class="img-fluid"
+              />
+              <h5 class="card-title"><%= element.name %></h5>
+              <p class="card-body">
+                <%= element.description %>
+              </p>
+            </a>
           </div>
           <% }) %>
           <div class="card col-sm-3 mx-auto new-scrapbook">
