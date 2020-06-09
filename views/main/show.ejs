@@ -43,7 +43,11 @@
               <h5><%= scrapbook.entries[i].title %></h5>
               <p><%= scrapbook.entries[i].memory %></p>
               <p>
-                <a href="/entries/<%= scrapbook.entries[i].id %>">Show More</a>
+                <a
+                  href="/entries/<%= scrapbook.entries[i].id %>"
+                  class="show-more"
+                  >Show More</a
+                >
               </p>
             </div>
           </div>
